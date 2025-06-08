@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Popup Modal</title>
+  <style>
+    #popup-toggle { display: none; }
+    .popup-btn {
+      padding: 12px 20px;
+      background: #2f80ed;
+      color: white;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .popup {
+      position: fixed; top: 0; left: 0;
+      width: 100%; height: 100%;
+      display: none; align-items: center; justify-content: center;
+      background: rgba(0,0,0,0.6); z-index: 9999;
+    }
+    #popup-toggle:checked + .popup {
+      display: flex;
+    }
+    .popup-content {
+      background: white; padding: 30px;
+      border-radius: 12px; width: 90%; max-width: 400px;
+      position: relative; box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      animation: fadeIn 0.3s ease;
+      text-align: center;
+    }
+    .close-btn {
+      position: absolute; top: 10px; right: 16px;
+      font-size: 24px; color: #333; cursor: pointer;
+      text-decoration: none;
+    }
+    @keyframes fadeIn {
+      from { transform: scale(0.8); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <input type="checkbox" id="popup-toggle">
+  <label for="popup-toggle" class="popup-btn">Open Pop-Up</label>
+
+  <div class="popup">
+    <div class="popup-content">
+      <label for="popup-toggle" class="close-btn">&times;</label>
+      <h2>Hello, KnDjoshua 👋</h2>
+      <p>This popup runs entirely from an external link — no JavaScript needed!</p>
+    </div>
+  </div>
+</body>
+</html>
